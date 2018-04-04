@@ -1,0 +1,43 @@
+package wangpingyu;
+
+import java.util.Scanner;
+
+public class rtret {
+	public static void main(String args[]) {
+		Scanner scn=new Scanner(System.in);
+       int a=scn.nextInt();
+       int b=scn.nextInt();
+       int sum1=1;
+       int sum2=1;
+       System.out.print(a+",");//print后输出不换行
+       System.out.print(1);//所有因数都有1
+       for(int i=2;i<a;i++)
+       {
+    	   if(a%i==0)
+    	   {
+    		   System.out.print("+"+i);//加号在前面，防止出现最后一个因数后跟个加号的情况
+    		   sum1+=i;
+    	   }
+       }
+       System.out.println("="+sum1);
+       System.out.print(a+",");
+       System.out.print(1);
+       for(int i=2;i<b;i++)
+       {
+    	   if(b%i==0)
+    	   {
+    		   System.out.print("+"+i);
+    		   sum2+=i;
+    	   }
+       }
+       System.out.println("="+sum2);
+       if(sum1==b&&sum2==a)
+       {
+    	   System.out.println(1);
+       }
+       else
+       {
+    	   System.out.println(0);
+       }
+}
+}
