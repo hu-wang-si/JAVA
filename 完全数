@@ -22,5 +22,9 @@ public class rtret {
     	   }
     	   b=0;
        }
+       if(judge==0)
+       {
+       System.out.println("No answer");
+       }
 }
 }
