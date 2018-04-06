@@ -1,0 +1,36 @@
+package wangpingyu;
+
+import java.util.Scanner;
+
+public class rtret {
+	public static void main(String args[]) {
+		int ge,shi,bai,judge=0;
+		Scanner scn=new Scanner(System.in);
+		int in=scn.nextInt();
+		for(int i=100;i<=in;i++){
+		ge=i%10;
+		shi=i/10%10;
+		bai=i/100;
+		if(i==ge*ge*ge+shi*shi*shi+bai*bai*bai)
+		{
+			System.out.println(i);
+			judge=1;
+		}
+		}
+		if(judge==0) {
+			System.out.println(" ");
+		}
+}
+}
+/*10.	
+【问题描述】编写一个程序，输入一个正整数N(N大于等于100小于等于999)，求出100~N之间的所有水仙花数。所谓  的水仙花数是：如果一个三位数的个位数、十位数、百位数的立方和等于该数自身，就称这个数为水仙花数。
+【输入形式】输入一个正整数N。
+【输出形式】输出从100到N之间的所有水仙花数，每个数以回车结束。
+【样例输入】
+ 400
+【样例输出】
+ 153
+ 370
+ 371
+【样例说明】输入一个的正整数400，输出为100~400之间的水仙花数153，370，371
+【评分标准】结果完全正确得20分，每个测试点4分。*/
