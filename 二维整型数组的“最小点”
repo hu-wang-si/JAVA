@@ -1,0 +1,82 @@
+package wangpingyu;
+import java.util.Scanner;
+public class rtret{
+	private static Scanner scn;
+	public static void main(String[] args){
+	Scanner cin=new Scanner(System.in);
+    int m=cin.nextInt();
+    int n=cin.nextInt();
+    int ary[][]=new int[m][n];
+    for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			ary[i][j]=cin.nextInt();
+		}
+	}
+    for(int i=0;i<m;i++) {
+    	int min=ary[i][0];
+    	int judge=1;
+    	int z=0;
+    	for(int j=0;j<n;j++) {
+    		if(min>ary[i][j]) {
+    			min=ary[i][j];
+    		}
+    	}
+    	for(int e=0;e<n;e++) {
+    		if(ary[i][e]==min)
+    		{
+    			z=e;
+    	for(int q=0;q<m;q++) {
+    		if(min>ary[q][z]) {
+    			judge=0;
+    		}
+    	}
+    	if(judge==1)
+    	{
+    		System.out.println(min+" "+(i+1)+" "+(z+1));;
+    	}
+    	}
+    	}	
+    }
+}
+}
+/.当前编程题：第3章 数组---二维整型数组的“最小点”
+
+1.	
+【问题描述】
+
+求二维整型数组的&ldquo;最小点&rdquo;。二维数组的&ldquo;最小点&rdquo;定义为：某个数是所在行的最小值，并且是所在列的最小值。注意：某行或某列上可能有多个&ldquo;最小点&rdquo;。
+
+【输入形式】
+
+从控制台读入二维数组。
+
+第一行只有以空格分隔的两个正整数n和m（n,m<=10），n代表二维数组的行数，m代表二维数组的列数。
+
+然后在后续n行上输入二维数组的元素，每行有m个以若干空格分隔的整数，代表二维数组在该行上的所有元素。
+
+【输出形式】
+
+向控制台输出二维数组的&ldquo;最小点&rdquo;，按行下标、列下标从小到大的顺序输出，每行一个，先输出&ldquo;最小点&rdquo;数值，再输出对应的行数、列数（行列都从1开始计数），以一个空格分隔。
+
+【样例输入】
+
+3  4
+
+8  60  1  100
+
+10  498  12  49
+
+-71  132  4  85
+
+【样例输出】
+
+1 1 3
+-71 3 1
+
+【样例说明】
+
+输入了一个三行四列的二维数组，第一行第三列的元素1是第一行的最小元素，同时也是第三列的最小元素，所以该元素是&ldquo;最小点&rdquo;，输出1 1 3。同样第三行第一列的元素-71也是第三行的最小元素，同时是第一列的最小元素，故该元素也是&ldquo;最小点&rdquo;，输出-71 3 1。
+
+【评分标准】
+
+该题要求输出二维数组的所有&ldquo;最小点&rdquo;，共有5个测试点./
